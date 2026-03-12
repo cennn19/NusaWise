@@ -1,0 +1,423 @@
+/* ============================
+   RESET & VARIABEL DASAR
+   ============================ */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', sans-serif; background-color: #FFFFFF; color: #111827; overflow-x: hidden; }
+
+:root {
+    --primary: #10B981; 
+    --primary-hover: #059669;
+    --dark: #111827;
+    --gray: #6B7280;
+    --light-gray: #F3F4F6;
+    --glass-bg: rgba(255, 255, 255, 0.2);
+    --glass-border: rgba(255, 255, 255, 0.3);
+    --blur: blur(12px);
+}
+
+/* ============================
+   1. HERO SECTION
+   ============================ */
+.hero-section {
+    position: relative; width: 100%; height: 85vh; min-height: 600px;
+    background-image: linear-gradient(to bottom, rgba(17, 24, 39, 0.4), rgba(17, 24, 39, 0.1)), url('https://images.unsplash.com/photo-1570789210967-2cac24afeb00?q=80&w=2000&auto=format&fit=crop');
+    background-size: cover; background-position: center;
+    display: flex; flex-direction: column; align-items: center;
+}
+
+header {
+    width: 100%; max-width: 1400px; padding: 24px 5%;
+    display: flex; justify-content: space-between; align-items: center; z-index: 10;
+}
+.logo { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 28px; font-weight: 800; color: #FFFFFF; text-decoration: none; }
+.logo span { color: var(--primary); }
+
+.nav-menu {
+    background-color: rgba(255, 255, 255, 0.95); padding: 12px 32px; border-radius: 100px;
+    display: flex; gap: 32px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+.nav-menu a { text-decoration: none; color: var(--dark); font-size: 14px; font-weight: 600; transition: 0.3s; }
+.nav-menu a:hover, .nav-menu a.active { color: var(--primary); }
+
+.btn-user { background-color: var(--primary); color: #FFFFFF; padding: 12px 32px; border-radius: 100px; text-decoration: none; font-weight: 600; font-size: 14px; transition: 0.3s; }
+.btn-user:hover { background-color: var(--primary-hover); }
+
+.hero-content { margin-top: 8vh; text-align: center; max-width: 900px; padding: 0 20px; z-index: 5; }
+.hero-content h1 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 56px; font-weight: 800; color: #FFFFFF; line-height: 1.2; margin-bottom: 16px; text-shadow: 0 4px 20px rgba(0,0,0,0.3); }
+.hero-content p { font-size: 18px; color: rgba(255, 255, 255, 0.9); margin-bottom: 48px; text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+
+.search-wrapper {
+    background: var(--glass-bg); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur);
+    border: 1px solid var(--glass-border); padding: 8px 8px 8px 24px; border-radius: 100px;
+    display: flex; align-items: center; max-width: 700px; margin: 0 auto 24px auto; box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+.search-wrapper input { flex: 1; background: transparent; border: none; outline: none; color: #FFFFFF; font-size: 15px; font-family: 'Inter', sans-serif; }
+.search-wrapper input::placeholder { color: rgba(255, 255, 255, 0.8); }
+.btn-search { background-color: var(--primary); color: #FFFFFF; border: none; padding: 14px 32px; border-radius: 100px; font-weight: 600; font-size: 15px; cursor: pointer; transition: 0.3s; }
+.btn-search:hover { background-color: var(--primary-hover); }
+
+.tags-container { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+.tag { background: var(--glass-bg); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur); border: 1px solid var(--glass-border); color: #FFFFFF; padding: 8px 20px; border-radius: 100px; font-size: 13px; font-weight: 500; cursor: pointer; transition: 0.3s; }
+.tag:hover { background: rgba(255, 255, 255, 0.3); }
+
+/* ============================
+   3. LIVE STATUS SECTION (Clean Utility)
+   ============================ */
+.live-status-section { max-width: 1200px; margin: 0 auto; padding: 80px 5% 40px 5%; }
+.section-header { margin-bottom: 40px; display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 2px solid var(--dark); padding-bottom: 16px; }
+.section-header-text h2 { font-family: 'Inter', sans-serif; font-size: 28px; font-weight: 800; color: var(--dark); margin-bottom: 4px; letter-spacing: -0.5px; }
+.section-header-text p { font-size: 15px; color: var(--gray); }
+.link-more { font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600; color: var(--dark); text-decoration: underline; text-underline-offset: 4px; }
+.link-more:hover { color: var(--primary); }
+
+.cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; align-items: stretch; }
+.dest-card { background: #FFFFFF; border-radius: 12px; padding: 16px; border: 1px solid #E5E7EB; display: flex; flex-direction: column; transition: all 0.2s ease-in-out; }
+.dest-card:hover { border-color: var(--dark); transform: translateY(-4px); box-shadow: 0 10px 20px rgba(0,0,0,0.04); }
+
+.image-wrapper { position: relative; width: 100%; height: 200px; margin-bottom: 16px; border-radius: 8px; overflow: hidden; background: #f3f4f6; }
+.dest-image { width: 100%; height: 100%; object-fit: cover; }
+.live-badge { position: absolute; top: 12px; left: 12px; padding: 4px 10px; border-radius: 4px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; z-index: 2; border: none; }
+.badge-safe { background: #10B981; color: #FFFFFF; }
+.badge-warning { background: #F59E0B; color: #FFFFFF; }
+.badge-danger { background: #EF4444; color: #FFFFFF; }
+.img-overlay-dark { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.4); z-index: 1; }
+
+.dest-info-wrapper { display: flex; flex-direction: column; gap: 12px; flex-grow: 1; }
+.dest-header-row { display: flex; justify-content: space-between; align-items: flex-start; }
+.dest-title { font-family: 'Inter', sans-serif; font-size: 18px; font-weight: 700; color: var(--dark); line-height: 1.3; }
+.dest-price { font-size: 16px; font-weight: 700; color: var(--dark); }
+.text-danger { font-size: 13px; font-weight: 700; color: #EF4444; }
+
+.metrics-row { display: flex; gap: 12px; padding-bottom: 12px; border-bottom: 1px solid #F3F4F6; }
+.metric-item { font-size: 12px; color: #6B7280; font-weight: 500; display: flex; align-items: center; gap: 4px; }
+
+.status-desc { font-size: 13px; color: #4B5563; line-height: 1.6; margin-bottom: 16px; position: relative; transition: max-height 0.3s ease; overflow: hidden; cursor: pointer; }
+.status-desc-collapsed { max-height: 4em; }
+.status-desc-collapsed::after { content: ""; position: absolute; bottom: 0; left: 0; width: 100%; height: 2em; background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1)); }
+.status-desc:not(.status-desc-collapsed) { max-height: 24em; }
+
+.btn-book { margin-top: auto; width: 100%; padding: 14px; border-radius: 8px; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 14px; border: 1px solid var(--dark); transition: all 0.2s; }
+.btn-book-active { background-color: transparent; color: var(--dark); cursor: pointer; }
+.btn-book-active:hover { background-color: var(--dark); color: #FFFFFF; }
+.btn-book-disabled { background-color: #F3F4F6; color: #9CA3AF; border-color: #E5E7EB; cursor: not-allowed; }
+
+
+/* ============================
+   AI PROMO & HIDDEN GEM SECTION
+   ============================ */
+.ai-promo-section {
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 20px 5% 80px 5%;
+    margin-top : 35px;
+}
+
+.promo-badge {
+    background: #FEF3C7; color: #D97706; 
+    padding: 6px 16px; border-radius: 100px; 
+    font-size: 13px; font-weight: 700; margin-bottom: 16px;
+    display: inline-block;
+}
+
+.promo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 32px;
+    margin-top: 40px;
+}
+
+.promo-card {
+    background: #FFFFFF;
+    border: 1px solid var(--light-gray);
+    border-radius: 16px;
+    display: flex;
+    overflow: hidden;
+    transition: 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+}
+
+.promo-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.06);
+    border-color: #D1D5DB;
+}
+
+.promo-image-box {
+    width: 40%;
+    position: relative;
+    background: #F3F4F6;
+}
+
+.promo-img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+}
+
+.ai-match-badge {
+    position: absolute; top: 12px; left: 12px;
+    background: rgba(17, 24, 39, 0.8); color: #34D399;
+    backdrop-filter: blur(4px);
+    padding: 4px 8px; border-radius: 6px;
+    font-size: 11px; font-weight: 700;
+}
+
+.promo-info {
+    width: 60%;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.promo-tag {
+    font-size: 11px; font-weight: 700; text-transform: uppercase;
+    color: var(--primary); letter-spacing: 0.5px; margin-bottom: 8px;
+}
+
+.tag-hidden-gem { color: #8B5CF6; } /* Warna ungu buat hidden gem */
+
+.promo-title {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 18px; font-weight: 700; color: var(--dark);
+    margin-bottom: 8px; line-height: 1.3;
+}
+
+.promo-desc {
+    font-size: 13px; color: var(--gray); line-height: 1.5;
+    margin-bottom: auto; /* Dorong harga ke bawah */
+    padding-bottom: 16px;
+}
+
+.price-row {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    border-top: 1px dashed var(--light-gray);
+    padding-top: 16px;
+}
+
+.price-col { display: flex; flex-direction: column; }
+
+.price-coret {
+    font-size: 12px; color: #9CA3AF; text-decoration: line-through;
+    margin-bottom: 2px; font-weight: 500;
+}
+
+.price-final {
+    font-size: 18px; font-weight: 800; color: var(--dark);
+}
+
+.price-final small { font-size: 12px; color: var(--gray); font-weight: 500; }
+
+.btn-buy-promo {
+    background: var(--dark); color: #FFFFFF;
+    border: none; padding: 10px 20px; border-radius: 8px;
+    font-weight: 600; font-size: 13px; cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-buy-promo:hover {
+    background: var(--primary);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .promo-grid { grid-template-columns: 1fr; }
+    .promo-card { flex-direction: column; }
+    .promo-image-box { width: 100%; height: 200px; }
+    .promo-info { width: 100%; }
+}
+
+/* ============================
+   5. FOOTER STYLES
+   ============================ */
+.main-footer { background-color: #f9fafb; padding: 80px 5% 30px; border-top: 1px solid var(--light-gray); color: var(--dark); }
+.footer-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 50px; }
+.footer-brand .logo { display: inline-block; margin-bottom: 20px; color: var(--dark); }
+.footer-brand p { font-size: 14px; color: var(--gray); line-height: 1.6; margin-bottom: 24px; }
+.social-links { display: flex; gap: 15px; }
+.social-links a { text-decoration: none; font-size: 20px; filter: grayscale(1); transition: 0.3s; }
+.social-links a:hover { filter: grayscale(0); transform: translateY(-3px); }
+.footer-links h4, .footer-cta h4 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 16px; font-weight: 700; margin-bottom: 24px; }
+.footer-links ul { list-style: none; }
+.footer-links ul li { margin-bottom: 12px; }
+.footer-links ul li a { text-decoration: none; font-size: 14px; color: var(--gray); transition: 0.3s; }
+.footer-links ul li a:hover { color: var(--primary); padding-left: 5px; }
+.footer-cta p { font-size: 13px; color: var(--gray); margin-bottom: 20px; }
+.btn-footer { width: 100%; padding: 12px; background: var(--primary); color: white; border: none; border-radius: 100px; font-weight: 600; cursor: pointer; transition: 0.3s; }
+.btn-footer:hover { background: var(--primary-hover); transform: scale(1.02); }
+.footer-bottom { max-width: 1200px; margin: 60px auto 0; padding-top: 30px; border-top: 1px solid #e5e7eb; text-align: center; }
+.footer-bottom p { font-size: 12px; color: #9ca3af; }
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .footer-container { grid-template-columns: 1fr 1fr; gap: 40px; }
+}
+@media (max-width: 600px) {
+    .footer-container { grid-template-columns: 1fr; text-align: center; }
+    .social-links { justify-content: center; }
+    .footer-links ul li a:hover { padding-left: 0; }
+}
+
+/* ============================
+   NUSAPASS / SMART TICKETING SECTION (FIXED COLOR PALETTE)
+   ============================ */
+.nusapass-section {
+    background-color: #FFFFFF; /* Kembali ke putih biar menyatu dengan tema website */
+    padding: 80px 5%;
+    position: relative;
+    overflow: hidden;
+    border-top: 1px solid var(--light-gray);
+}
+
+.pass-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+/* KONTEN KIRI (Sesuai Warna Utama) */
+.pass-badge {
+    display: inline-block;
+    background: #ECFDF5; /* Hijau super muda */
+    color: #047857; /* Hijau tua */
+    padding: 6px 16px; border-radius: 100px; font-size: 13px; font-weight: 700;
+    margin-bottom: 24px; border: 1px solid #A7F3D0;
+}
+
+.pass-content h2 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 36px; font-weight: 800; line-height: 1.2;
+    margin-bottom: 20px; color: var(--dark);
+}
+
+.pass-content p {
+    color: var(--gray); font-size: 16px; line-height: 1.6; margin-bottom: 40px;
+}
+
+.pass-content p strong { color: var(--dark); }
+
+.pass-features {
+    list-style: none; display: flex; flex-direction: column; gap: 24px;
+}
+
+.pass-features li { display: flex; align-items: flex-start; gap: 16px; }
+
+.feat-icon {
+    font-size: 20px; background: #ECFDF5; color: var(--primary);
+    width: 48px; height: 48px; display: flex; justify-content: center; align-items: center;
+    border-radius: 12px; flex-shrink: 0;
+}
+
+.pass-features li div strong {
+    display: block; font-size: 16px; margin-bottom: 4px; color: var(--dark);
+}
+
+.pass-features li div span {
+    font-size: 14px; color: var(--gray); line-height: 1.5; display: block;
+}
+
+/* VISUAL KANAN (TIKET PREMIUM) */
+.pass-visual {
+    position: relative;
+    display: flex; justify-content: center; align-items: center;
+    height: 100%; min-height: 450px;
+}
+
+/* Efek Cahaya Hijau Khas NusaWise */
+.glow-effect {
+    position: absolute;
+    width: 250px; height: 250px;
+    background: var(--primary); /* Pakai Emerald Green bawaan lu */
+    filter: blur(80px); 
+    opacity: 0.15; /* Dibuat lebih tipis biar elegan di latar putih */
+    border-radius: 50%;
+    animation: pulseGlow 4s infinite alternate;
+}
+
+@keyframes pulseGlow {
+    0% { transform: scale(0.8); opacity: 0.1; }
+    100% { transform: scale(1.2); opacity: 0.2; }
+}
+
+/* Desain Tiket Gelap Kontras */
+.digital-ticket {
+    background: var(--dark); /* Pakai warna dark utama website */
+    width: 320px;
+    border-radius: 20px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 25px 50px rgba(17, 24, 39, 0.15);
+    animation: floatTicket 6s ease-in-out infinite;
+}
+
+@keyframes floatTicket {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(2deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+}
+
+.ticket-header {
+    background: rgba(255, 255, 255, 0.05); padding: 20px; border-radius: 20px 20px 0 0;
+    display: flex; justify-content: space-between; align-items: center;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
+}
+
+.ticket-logo {
+    font-family: 'Plus Jakarta Sans', sans-serif; font-size: 18px; font-weight: 800; color: #FFFFFF;
+}
+
+.ticket-logo span { color: var(--primary); }
+
+.ticket-status {
+    background: rgba(16, 185, 129, 0.2); color: #34D399; padding: 4px 10px;
+    border-radius: 100px; font-size: 12px; font-weight: 700; border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.ticket-qr-area {
+    background: #FFFFFF; /* Background QR wajib putih biar scanner bisa baca */
+    padding: 30px 20px; text-align: center;
+}
+
+.qr-img {
+    width: 160px; height: 160px; border-radius: 8px; margin-bottom: 12px; border: 1px solid var(--light-gray);
+}
+
+.ticket-qr-area p {
+    font-size: 13px; color: var(--gray); font-weight: 600; text-transform: uppercase; letter-spacing: 1px;
+}
+
+.ticket-details {
+    background: var(--dark); padding: 20px; border-radius: 0 0 20px 20px; color: #FFFFFF;
+}
+
+.detail-group { margin-bottom: 16px; }
+.detail-group:last-child { margin-bottom: 0; }
+
+.detail-group span {
+    display: block; font-size: 11px; color: #9CA3AF; text-transform: uppercase; margin-bottom: 4px; letter-spacing: 0.5px;
+}
+
+.detail-group strong {
+    display: block; font-size: 15px; font-weight: 600; color: #FFFFFF;
+}
+
+.detail-row {
+    display: flex; justify-content: space-between; align-items: flex-end;
+}
+
+/* Sobekan Tiket (Warna ikut background section = Putih) */
+.ticket-notch {
+    position: absolute; top: 70px; 
+    width: 24px; height: 24px; background: #FFFFFF; border-radius: 50%;
+}
+
+.notch-left { left: -12px; }
+.notch-right { right: -12px; }
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+    .pass-container { grid-template-columns: 1fr; gap: 60px; }
+    .pass-content { text-align: center; }
+    .pass-features li { text-align: left; }
+}

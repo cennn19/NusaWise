@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NusaWise - Ekosistem Wisata Cerdas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <section class="hero-section">
+        <header>
+            <a href="#" class="logo">Nusa<span>Wise</span></a>
+            <nav class="nav-menu">
+                <a href="#" class="active">Beranda</a>
+                <a href="#">Destinasi</a>
+                <a href="#">Rencana</a>
+                <a href="#">AI agent</a>
+            </nav>
+            <a href="#" class="btn-user">User123</a>
+        </header>
+
+        <div class="hero-content">
+            <h1>Satu Platform untuk Wisata Nusantara yang Lebih Cerdas</h1>
+            <p>NusaWise mengintegrasikan Smart Ticketing, AI Travel Recommendation, dan EcoWatch.</p>
+            
+            <div class="search-wrapper">
+                <input type="text" placeholder="✨ Deskripsikan liburan impianmu, biarkan AI merencanakannya">
+                <button class="btn-search">Rancang Liburan</button>
+            </div>
+
+            <div class="tags-container">
+                <div class="tag">🏖️ Pantai bebas pungli</div>
+                <div class="tag">💎 Wisata Hidden Gem</div>
+                <div class="tag">🅿️ Gratis Parkir</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ai-promo-section">
+        <div class="section-header" style="border-bottom: none; align-items: center; text-align: center; justify-content: center; flex-direction: column;">
+            <h2 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 32px; font-weight: 800; color: var(--dark); margin-bottom: 8px;">Spesial Buat Kamu Minggu Ini</h2>
+            <p style="font-size: 16px; color: var(--gray);">Rekomendasi destinasi aman dengan harga terbaik berdasarkan cuaca hari ini.</p>
+        </div>
+
+        <div class="promo-grid">
+            <div class="promo-card">
+                <div class="promo-image-box">
+                    <span class="ai-match-badge">98% Cocok</span>
+                    <img src="https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?auto=format&fit=crop&w=600&q=80" alt="Kawah Ijen" class="promo-img">
+                </div>
+                <div class="promo-info">
+                    <span class="promo-tag">Bundling Hemat</span>
+                    <h3 class="promo-title">Eksplorasi Kawah Ijen & Blue Fire</h3>
+                    <p class="promo-desc">Sudah termasuk tiket masuk, masker gas, dan pemandu lokal berlisensi.</p>
+                    <div class="price-row">
+                        <div class="price-col">
+                            <span class="price-coret">Rp 250.000</span>
+                            <span class="price-final">Rp 185.000</span>
+                        </div>
+                        <button class="btn-buy-promo">Ambil Promo</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="promo-card">
+                <div class="promo-image-box">
+                    <span class="ai-match-badge">92% Cocok</span>
+                    <img src="https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&w=600&q=80" alt="Desa Pinggan" class="promo-img">
+                </div>
+                <div class="promo-info">
+                    <span class="promo-tag tag-hidden-gem">💎 Hidden Gem</span>
+                    <h3 class="promo-title">Glamping Desa Pinggan, Kintamani</h3>
+                    <p class="promo-desc">Bebas dari keramaian (Overtourism). Nikmati lautan awan dari dalam tenda VIP.</p>
+                    <div class="price-row">
+                        <div class="price-col">
+                            <span class="price-coret">Rp 850.000</span>
+                            <span class="price-final">Rp 599.000<small>/malam</small></span>
+                        </div>
+                        <button class="btn-buy-promo">Ambil Promo</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="live-status-section">
+        <div class="section-header">
+            <div class="section-header-text">
+                <h2>Live Status Destinasi</h2>
+                <p>Lihat kondisi terkini dari destinasi yang ingin kamu kunjungi</p>
+            </div>
+            <a href="#" class="link-more">Lihat Semua Destinasi &rsaquo;</a>
+        </div>
+
+        <div class="cards-grid">
+            <div class="dest-card">
+                <div class="image-wrapper">
+                    <span class="live-badge badge-safe">🟢 Status: Aman</span>
+                    <img src="bromo.jpg" alt="Gunung Bromo" class="dest-image">
+                </div>
+                <div class="dest-info-wrapper">
+                    <div class="dest-header-row">
+                        <span class="dest-title">Gunung Bromo</span>
+                        <span class="dest-price">Rp 35.000</span>
+                    </div>
+                    <div class="metrics-row">
+                        <span class="metric-item">☀️ 18°C Cerah</span>
+                        <span class="metric-item">👥 Keramaian: 35%</span>
+                    </div>
+                    <p class="status-desc status-desc-collapsed">
+                        Kondisi jalur pendakian kering. Ideal untuk kunjungan, tidak ada penumpukan antrean jeep di Pananjakan. Pemandangan matahari terbit sangat jelas tanpa awan. Disarankan membawa jaket tebal dan masker untuk menghindari debu pasir vulkanik di Kaldera. Operasional jeep berjalan normal.
+                    </p>
+                    <button class="btn-book btn-book-active">Pesan Tiket QR</button>
+                </div>
+            </div>
+
+            <div class="dest-card">
+                <div class="image-wrapper">
+                    <span class="live-badge badge-warning">🟡 Waspada Cuaca</span>
+                    <img src="tumpak sewu.jpg" alt="Air Terjun Tumpak Sewu" class="dest-image">
+                </div>
+                <div class="dest-info-wrapper">
+                    <div class="dest-header-row">
+                        <span class="dest-title">Tumpak Sewu</span>
+                        <span class="dest-price">Rp 20.000</span>
+                    </div>
+                    <div class="metrics-row">
+                        <span class="metric-item">🌧️ Hujan Sedang</span>
+                        <span class="metric-item text-danger">👥 Keramaian: 85%</span>
+                    </div>
+                    <p class="status-desc status-desc-collapsed">
+                        Debit air meningkat akibat hujan di hulu kemarin sore. Area panorama cukup padat, sistem tiket menyarankan jam kunjung sore sekitar pukul 15.00 WIB untuk menghindari penumpukan. Tangga turun ke dasar air terjun sedikit licin, disarankan menggunakan pemandu lokal dan alas kaki anti-selip.
+                    </p>
+                    <button class="btn-book btn-book-active">Pesan Tiket QR</button>
+                </div>
+            </div>
+
+            <div class="dest-card">
+                <div class="image-wrapper">
+                    <div class="img-overlay-dark"></div>
+                    <span class="live-badge badge-danger">🔴 Ditutup Sementara</span>
+                    <img src="balekambang.jpg" alt="Pantai Balekambang" class="dest-image">
+                </div>
+                <div class="dest-info-wrapper">
+                    <div class="dest-header-row">
+                        <span class="dest-title">Pantai Balekambang</span>
+                        <span class="text-danger">Ditutup</span>
+                    </div>
+                    <div class="metrics-row">
+                        <span class="metric-item">🌊 Badai Pasang</span>
+                        <span class="metric-item">👥 Keramaian: 0%</span>
+                    </div>
+                    <p class="status-desc status-desc-collapsed">
+                        Peringatan dini BMKG: Gelombang pasang mencapai 4 meter akibat angin kencang di Samudera Hindia. Jembatan menuju Pura Amarta Jati ditutup total. Wisatawan dilarang mendekati area bibir pantai. Operasional wisata dihentikan sementara hingga kondisi kembali normal demi keselamatan.
+                    </p>
+                    <button class="btn-book btn-book-disabled" disabled>Tiket Dibekukan</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="nusapass-section">
+        <div class="pass-container">
+            <div class="pass-content">
+                <div class="pass-badge">📲 Smart Ticketing Terpadu</div>
+                <h2>Satu QR Code untuk Seluruh Eksplorasimu</h2>
+                <p>Ucapkan selamat tinggal pada antrean loket panjang dan karcis kertas yang gampang hilang. <strong>NusaPass</strong> menyatukan tiket masuk, retribusi Pemda, hingga pembayaran parkir dalam satu genggaman.</p>
+                
+                <ul class="pass-features">
+                    <li>
+                        <span class="feat-icon">⚡</span>
+                        <div>
+                            <strong>Jalur Cepat (Fast Track)</strong>
+                            <span>Scan langsung di gerbang otomatis tanpa kontak fisik.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="feat-icon">💳</span>
+                        <div>
+                            <strong>Dukung QRIS Cross-Border</strong>
+                            <span>Turis asing bisa bayar pakai aplikasi bank dari negaranya.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="feat-icon">💰</span>
+                        <div>
+                            <strong>Aman dari Pungli</strong>
+                            <span>Transaksi langsung tercatat di kas Pendapatan Asli Daerah (PAD).</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="pass-visual">
+                <div class="glow-effect"></div>
+                
+                <div class="digital-ticket">
+                    <div class="ticket-header">
+                        <span class="ticket-logo">Nusa<span>Wise</span> Pass</span>
+                        <span class="ticket-status">🟢 Valid</span>
+                    </div>
+                    
+                    <div class="ticket-qr-area">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=NusaWise-FastTrack-Bromo" alt="QR Code" class="qr-img">
+                        <p>Scan di Gerbang Utama</p>
+                    </div>
+                    
+                    <div class="ticket-details">
+                        <div class="detail-group">
+                            <span>Destinasi</span>
+                            <strong>Taman Nasional Bromo</strong>
+                        </div>
+                        <div class="detail-row">
+                            <div class="detail-group">
+                                <span>Tanggal</span>
+                                <strong>12 Mar 2026</strong>
+                            </div>
+                            <div class="detail-group">
+                                <span>Pengunjung</span>
+                                <strong>2 Dewasa</strong>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="ticket-notch notch-left"></div>
+                    <div class="ticket-notch notch-right"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="#" class="logo">Nusa<span>Wise</span></a>
+                <p>Membangun masa depan pariwisata Nusantara yang cerdas, aman, dan berkelanjutan melalui integrasi AI dan komunitas.</p>
+                <div class="social-links">
+                    <a href="#">🌐</a>
+                    <a href="#">📸</a>
+                    <a href="#">🐦</a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Navigasi</h4>
+                <ul>
+                    <li><a href="#">Beranda</a></li>
+                    <li><a href="#">Cek Destinasi</a></li>
+                    <li><a href="#">Rencana Perjalanan</a></li>
+                    <li><a href="#">Agen AI</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Layanan</h4>
+                <ul>
+                    <li><a href="#">Smart Ticketing</a></li>
+                    <li><a href="#">Laporan EcoWatch</a></li>
+                    <li><a href="#">UMKM Partner</a></li>
+                    <li><a href="#">Bantuan 24/7</a></li>
+                </ul>
+            </div>
+            <div class="footer-cta">
+                <h4>Jadi Agen EcoWatch</h4>
+                <p>Dapatkan poin dan reward dengan melaporkan kondisi wisata.</p>
+                <button class="btn-footer">Daftar Sekarang</button>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 NusaWise Team. Proyek Digdaya X Hackathon.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.status-desc').forEach(p => {
+            p.addEventListener('click', () => {
+                p.classList.toggle('status-desc-collapsed');
+            });
+        });
+    </script>
+</body>
+</html>
