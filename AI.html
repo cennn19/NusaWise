@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NusaWise - AI Trip Planner</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-rencana" x-data="{ isGenerating: false, showResult: false, inputText: '' }">
+
+    <header class="header-solid">
+        <div class="header-inner">
+            <a href="index.html" class="logo">Nusa<span>Wise</span></a>
+            <nav class="nav-menu">
+                <a href="index.html">Beranda</a>
+                <a href="destinasi.html">Destinasi</a>
+                <a href="rencana.html">Rencana</a> 
+                <a href="AI.html" class="active">AI agent</a>
+            </nav>
+            <a href="#" class="btn-user">User123</a>
+        </div>
+    </header>
+
+    <section class="ai-hero" x-show="!showResult">
+        <h1>Rancang Perjalanan Anda dengan Gemini AI</h1>
+        <p>Beritahu kami liburan impian Anda. AI kami akan mencocokkan profil Anda dengan data cuaca BMKG dan merekomendasikan destinasi terbaik bebas kerumunan.</p>
+    </section>
+
+    <div class="ai-prompt-box" x-show="!showResult" x-transition>
+        <textarea 
+            class="prompt-input" 
+            x-model="inputText"
+            placeholder="Ketik rencana Anda... (Contoh: Saya mau liburan 2 hari 1 malam di sekitar Malang & Batu. Budget Rp 1.500.000 untuk 2 orang. Saya suka alam yang sepi dan ingin mencoba kuliner UMKM lokal.)"></textarea>
+        
+        <div class="prompt-actions">
+            <div class="prompt-tags">
+                <span class="ptag" @click="inputText += ' Wisata Alam'">🌲 Alam</span>
+                <span class="ptag" @click="inputText += ' Hidden Gem'">💎 Hidden Gem</span>
+                <span class="ptag" @click="inputText += ' Kuliner Lokal'">🍜 Kuliner Lokal</span>
+                <span class="ptag" @click="inputText += ' Ramah Anak'">👨‍👩‍👧 Keluarga</span>
+            </div>
+            <button class="btn-generate" @click="isGenerating = true; setTimeout(() => { isGenerating = false; showResult = true; }, 2500)">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                Generate
+            </button>
+        </div>
+    </div>
+
+    <div class="ai-loader" x-show="isGenerating" style="display: none;">
+        <div class="spinner"></div>
+        <h3 class="loader-title">Memproses Data dengan Gemini AI...</h3>
+        <p class="loader-desc">Menarik data cuaca BMKG & memfilter kapasitas destinasi...</p>
+    </div>
+
+    <div class="result-container" x-show="showResult" x-transition style="display: none;">
+        
+        <div class="timeline-wrapper">
+            
+            <div class="alert-box eco">
+                <div class="alert-icon"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg></div>
+                <div>
+                    <h4 class="alert-title">Insight Gemini AI</h4>
+                    <p class="alert-desc">
+                        Sesuai permintaan Anda untuk area <strong>Malang & Batu</strong> dengan preferensi <em>"Alam yang sepi"</em>. Kami telah <strong>mengalihkan rute Anda dari Jatim Park</strong> (saat ini terdeteksi kapasitas 90%) menuju Desa Wisata Pujon Kidul & Air Terjun Coban Rondo. Cuaca diprediksi cerah berawan (22°C).
+                    </p>
+                </div>
+            </div>
+
+            <div class="day-header">
+                <span class="day-badge">Hari 1</span> Eksplorasi Alam & UMKM
+            </div>
+            
+            <div class="timeline">
+                
+                <div class="tl-item">
+                    <div class="tl-dot"></div>
+                    <div class="tl-time">08:00 WIB - Eksplorasi Pagi</div>
+                    <div class="tl-card">
+                        <img src="https://images.unsplash.com/photo-1570789210967-2cac24afeb00?auto=format&fit=crop&w=300&q=80" alt="Coban Rondo" class="tl-img">
+                        <div class="tl-content">
+                            <h4 class="tl-title">Air Terjun Coban Rondo</h4>
+                            <p class="tl-desc">Kapasitas sangat aman (20%). Skor EcoWatch: 92/100 (Air Bersih).</p>
+                            <div class="tl-bottom-row">
+                                <div class="tl-tags">
+                                    <span class="tl-tag tag-pemda">E-Ticket Pemda</span>
+                                </div>
+                                <span class="tl-price">Rp 35.000 / org</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tl-item">
+                    <div class="tl-dot"></div>
+                    <div class="tl-time">13:00 WIB - Makan Siang & Belanja</div>
+                    <div class="tl-card">
+                        <img src="https://images.unsplash.com/photo-1626844131082-256783844137?auto=format&fit=crop&w=300&q=80" alt="UMKM Lokal" class="tl-img">
+                        <div class="tl-content">
+                            <h4 class="tl-title">Pusat Oleh-Oleh "Bu Siti" (Mitra UMKM)</h4>
+                            <p class="tl-desc">Kami merekomendasikan UMKM ini berdasarkan rating tertinggi di area Pujon. Cicipi Sari Apel Murni khas Batu.</p>
+                            <div class="tl-bottom-row">
+                                <div class="tl-tags">
+                                    <span class="tl-tag tag-umkm">Pemberdayaan UMKM</span>
+                                </div>
+                                <span class="tl-price">Estimasi Rp 150.000</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="day-header">
+                <span class="day-badge">Hari 2</span> Hidden Gem & Relaksasi
+            </div>
+
+            <div class="timeline">
+                <div class="tl-item">
+                    <div class="tl-dot"></div>
+                    <div class="tl-time">05:00 WIB - Sunrise (Rekomendasi Utama)</div>
+                    <div class="tl-card card-gem">
+                        <img src="https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&w=300&q=80" alt="Bukit Nirwana" class="tl-img">
+                        <div class="tl-content">
+                            <h4 class="tl-title">Glamping & Sunrise Bukit Nirwana</h4>
+                            <p class="tl-desc">Alternatif Gunung Bromo yang bebas dari lautan Jeep. Sangat sepi dan cocok untuk profil liburan Anda.</p>
+                            <div class="tl-bottom-row">
+                                <div class="tl-tags">
+                                    <span class="tl-tag tag-gem">💎 Hidden Gem</span>
+                                </div>
+                                <span class="tl-price">Rp 450.000 / tenda</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="summary-sidebar">
+            <div class="summary-card">
+                <h3 class="summary-title">Estimasi Biaya</h3>
+                <p class="summary-subtitle">Untuk 2 Orang (2 Hari 1 Malam)</p>
+                
+                <div class="summary-price">Rp 670.000</div>
+                <p class="summary-highlight">Sangat hemat! 55% di bawah budget Anda.</p>
+
+                <div class="summary-item">
+                    <span>Tiket Coban Rondo (2x)</span>
+                    <span class="summary-val">Rp 70.000</span>
+                </div>
+                <div class="summary-item">
+                    <span>Voucher UMKM Bu Siti</span>
+                    <span class="summary-val">Rp 150.000</span>
+                </div>
+                <div class="summary-item">
+                    <span>Glamping Bukit Nirwana</span>
+                    <span class="summary-val">Rp 450.000</span>
+                </div>
+
+                <div class="eco-impact-box">
+                    <p class="eco-impact-label">Dampak Ekologi Anda</p>
+                    <div class="eco-impact-val">
+                        <span class="eco-icon">🌿</span>
+                        <span class="eco-text">Rendah Emisi Karbon</span>
+                    </div>
+                </div>
+
+                <button class="btn-checkout-all">
+                    Bayar Semua via QRIS
+                </button>
+                <p class="checkout-note">Didukung oleh NusaPass & BI-FAST</p>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="#" class="logo">Nusa<span>Wise</span></a>
+                <p>Membangun masa depan pariwisata Nusantara yang cerdas, aman, dan berkelanjutan melalui integrasi AI dan komunitas.</p>
+                <div class="social-links">
+                    <a href="#">🌐</a>
+                    <a href="#">📸</a>
+                    <a href="#">🐦</a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Navigasi</h4>
+                <ul>
+                    <li><a href="#">Beranda</a></li>
+                    <li><a href="#">Cek Destinasi</a></li>
+                    <li><a href="#">Rencana Perjalanan</a></li>
+                    <li><a href="#">Agen AI</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Layanan</h4>
+                <ul>
+                    <li><a href="#">Smart Ticketing</a></li>
+                    <li><a href="#">Laporan EcoWatch</a></li>
+                    <li><a href="#">UMKM Partner</a></li>
+                    <li><a href="#">Bantuan 24/7</a></li>
+                </ul>
+            </div>
+            <div class="footer-cta">
+                <h4>Jadi Agen EcoWatch</h4>
+                <p>Dapatkan poin dan reward dengan melaporkan kondisi wisata.</p>
+                <button class="btn-footer">Daftar Sekarang</button>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 NusaWise Team. Proyek Digdaya X Hackathon.</p>
+        </div>
+    </footer>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</body>
+</html>

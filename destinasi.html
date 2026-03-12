@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NusaWise - Eksplorasi Destinasi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-destinasi">
+
+    <header class="header-solid">
+        <div class="header-inner">
+            <a href="index.html" class="logo">Nusa<span>Wise</span></a>
+            <nav class="nav-menu">
+                <a href="index.html">Beranda</a>
+                <a href="destinasi.html" class="active">Destinasi</a>
+                <a href="rencana.html">Rencana</a>
+                <a href="AI.html">AI agent</a>
+            </nav>
+            <a href="#" class="btn-user">User123</a>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <h1>Eksplorasi Keindahan Nusantara</h1>
+        <p class="text-gray-light">Pesan tiket resmi, pantau kondisi lingkungan, dan temukan hidden gems.</p>
+    </section>
+
+    <div class="search-filter-bar">
+        <input type="text" placeholder="📍 Mau liburan ke mana hari ini? (Misal: Malang, Bali, Pantai)">
+        <button>Cari Tiket</button>
+    </div>
+
+    <div class="dest-container">
+        
+        <aside class="filter-sidebar">
+            <div class="filter-group">
+                <h3 class="filter-title">Status EcoWatch (Real-time)</h3>
+                <label class="checkbox-item">
+                    <input type="checkbox" checked>
+                    <span>🟢 Aman (Udara & Air Bersih)</span>
+                </label>
+                <label class="checkbox-item">
+                    <input type="checkbox">
+                    <span>🟡 Waspada Cuaca</span>
+                </label>
+                <label class="checkbox-item">
+                    <input type="checkbox">
+                    <span>🔴 Ditutup Sementara</span>
+                </label>
+            </div>
+
+            <div class="filter-group">
+                <h3 class="filter-title">Rekomendasi AI</h3>
+                <label class="checkbox-item">
+                    <input type="checkbox" checked>
+                    <span>✨ Hidden Gems (Sepi & Indah)</span>
+                </label>
+                <label class="checkbox-item">
+                    <input type="checkbox">
+                    <span>💎 Promosi UMKM Lokal</span>
+                </label>
+            </div>
+
+            <div class="filter-group">
+                <h3 class="filter-title">Kategori Wisata</h3>
+                <label class="checkbox-item"><input type="checkbox"><span>Pegunungan & Alam</span></label>
+                <label class="checkbox-item"><input type="checkbox"><span>Pantai & Pesisir</span></label>
+                <label class="checkbox-item"><input type="checkbox"><span>Taman Hiburan (Swasta)</span></label>
+                <label class="checkbox-item"><input type="checkbox"><span>Desa Wisata</span></label>
+            </div>
+        </aside>
+
+        <div class="dest-list">
+            <div class="list-header">
+                <h2>Menampilkan 45 Destinasi Tersedia</h2>
+                <select class="sort-dropdown">
+                    <option>Rekomendasi AI Terbaik</option>
+                    <option>Harga Termurah</option>
+                    <option>Paling Populer</option>
+                    <option>Skor EcoWatch Tertinggi</option>
+                </select>
+            </div>
+
+            <div class="horizontal-card">
+                <div class="hc-img-wrapper">
+                    <span class="hc-badge bg-indigo">98% AI Match</span>
+                    <img src="https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&w=400&q=80" alt="Desa Pinggan" class="hc-img">
+                </div>
+                <div class="hc-body">
+                    <div class="hc-location">📍 Kintamani, Bali</div>
+                    <h3 class="hc-title">Glamping Desa Wisata Pinggan</h3>
+                    <div class="hc-tags">
+                        <span class="hc-tag tag-ai">💎 Hidden Gem</span>
+                        <span class="hc-tag">Bebas Overtourism</span>
+                        <span class="hc-tag">Transaksi QRIS</span>
+                    </div>
+                    <p class="hc-desc">
+                        Rekomendasi sistem untuk menghindari keramaian di Ubud. Nikmati sunrise dengan pemandangan Gunung Batur langsung dari desa wisata.
+                    </p>
+                    <div class="hc-bottom">
+                        <div class="hc-eco-status">
+                            <div class="eco-indicator eco-safe"></div>
+                            <span class="hc-eco-text">Skor Lingkungan: 95/100 (Sangat Baik)</span>
+                        </div>
+                        <div class="hc-price-section">
+                            <div class="hc-price-label">Harga Per Malam</div>
+                            <div class="hc-price-final">Rp 450.000</div>
+                            <button class="btn-hc-book">Pilih Kamar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="horizontal-card">
+                <div class="hc-img-wrapper">
+                    <span class="hc-badge">Populer</span>
+                    <img src="https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?auto=format&fit=crop&w=400&q=80" alt="Kawah Ijen" class="hc-img">
+                </div>
+                <div class="hc-body">
+                    <div class="hc-location">📍 Banyuwangi, Jawa Timur</div>
+                    <h3 class="hc-title">Taman Wisata Alam Kawah Ijen</h3>
+                    <div class="hc-tags">
+                        <span class="hc-tag">Retribusi E-Tiket</span>
+                        <span class="hc-tag">Turis Asing (Cross-Border)</span>
+                    </div>
+                    <p class="hc-desc">
+                        Fenomena blue fire langka. Pembayaran tiket kini langsung masuk ke kas daerah (PAD) via NusaPass. Tersedia jalur Fast Track.
+                    </p>
+                    <div class="hc-bottom">
+                        <div class="hc-eco-status">
+                            <div class="eco-indicator eco-warn"></div>
+                            <span class="hc-eco-text">Gas Belerang Sedang (Wajib Masker)</span>
+                        </div>
+                        <div class="hc-price-section">
+                            <div class="hc-price-label">Mulai Dari</div>
+                            <div class="hc-price-final">Rp 15.000</div>
+                            <button class="btn-hc-book">Pesan Tiket</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="horizontal-card">
+                <div class="hc-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=400&q=80" alt="Museum Angkut" class="hc-img">
+                </div>
+                <div class="hc-body">
+                    <div class="hc-location">📍 Batu, Jawa Timur</div>
+                    <h3 class="hc-title">Museum Angkut Batu</h3>
+                    <div class="hc-tags">
+                        <span class="hc-tag">Taman Hiburan (Swasta)</span>
+                        <span class="hc-tag">Pajak Otomatis (10%)</span>
+                    </div>
+                    <p class="hc-desc">
+                        Museum transportasi terbesar di Asia Tenggara. Kuota pengunjung hari ini tersisa 450 orang.
+                    </p>
+                    <div class="hc-bottom">
+                        <div class="hc-eco-status">
+                            <div class="eco-indicator eco-safe"></div>
+                            <span class="hc-eco-text">Kapasitas: Aman (65%)</span>
+                        </div>
+                        <div class="hc-price-section">
+                            <div class="hc-price-label">Tiket Masuk (Weekend)</div>
+                            <div class="hc-price-coret">Rp 120.000</div>
+                            <div class="hc-price-final">Rp 100.000</div>
+                            <button class="btn-hc-book">Pesan Tiket</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="#" class="logo">Nusa<span>Wise</span></a>
+                <p>Membangun masa depan pariwisata Nusantara yang cerdas, aman, dan berkelanjutan melalui integrasi AI dan komunitas.</p>
+                <div class="social-links">
+                    <a href="#">🌐</a>
+                    <a href="#">📸</a>
+                    <a href="#">🐦</a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Navigasi</h4>
+                <ul>
+                    <li><a href="#">Beranda</a></li>
+                    <li><a href="#">Cek Destinasi</a></li>
+                    <li><a href="#">Rencana Perjalanan</a></li>
+                    <li><a href="#">Agen AI</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Layanan</h4>
+                <ul>
+                    <li><a href="#">Smart Ticketing</a></li>
+                    <li><a href="#">Laporan EcoWatch</a></li>
+                    <li><a href="#">UMKM Partner</a></li>
+                    <li><a href="#">Bantuan 24/7</a></li>
+                </ul>
+            </div>
+            <div class="footer-cta">
+                <h4>Jadi Agen EcoWatch</h4>
+                <p>Dapatkan poin dan reward dengan melaporkan kondisi wisata.</p>
+                <button class="btn-footer">Daftar Sekarang</button>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 NusaWise Team. Proyek Digdaya X Hackathon.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

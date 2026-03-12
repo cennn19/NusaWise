@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NusaWise - Rencana Perjalanan Saya</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="page-mytrips">
+
+    <header class="header-solid">
+        <div class="header-inner">
+            <a href="index.html" class="logo">Nusa<span>Wise</span></a>
+            <nav class="nav-menu">
+                <a href="index.html">Beranda</a>
+                <a href="destinasi.html">Destinasi</a>
+                <a href="rencana.html" class="active">Rencana</a>
+                <a href="AI.html">AI agent</a>
+            </nav>
+            <a href="#" class="btn-user">User123</a>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <h1>Rencana Perjalanan Anda</h1>
+        <p class="text-gray-light">Kelola itinerary, akses NusaPass (E-Tiket), dan lihat riwayat liburan.</p>
+    </section>
+
+    <main class="mytrips-container" x-data="{ tab: 'upcoming' }">
+
+        <div class="mytrips-tabs">
+            <button @click="tab = 'upcoming'" :class="tab === 'upcoming' ? 'tab-active' : 'tab-inactive'">
+                Akan Datang (1)
+            </button>
+            <button @click="tab = 'past'" :class="tab === 'past' ? 'tab-active' : 'tab-inactive'">
+                Riwayat Perjalanan (12)
+            </button>
+            <button @click="tab = 'cancelled'" :class="tab === 'cancelled' ? 'tab-active' : 'tab-inactive'">
+                Dibatalkan (0)
+            </button>
+        </div>
+
+        <div x-show="tab === 'upcoming'" x-transition.opacity class="trip-list">
+
+            <div class="trip-card">
+                <div class="trip-card-header">
+                    <div class="trip-date-box">
+                        <span class="td-month">Mei</span>
+                        <span class="td-date">12</span>
+                        <span class="td-year">2026</span>
+                    </div>
+                    <div class="trip-header-info">
+                        <span class="trip-status status-ready">Menunggu Keberangkatan</span>
+                        <h2 class="trip-title">Eksplorasi Alam Malang & Batu</h2>
+                        <p class="trip-meta">2 Hari 1 Malam • 2 Penumpang • Order ID: #NW-88271</p>
+                    </div>
+                    <button class="btn-nusapass">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm14 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z">
+                            </path>
+                        </svg>
+                        Tampilkan NusaPass (QR)
+                    </button>
+                </div>
+
+                <div class="trip-card-body">
+                    <h4 class="tc-subtitle">Ringkasan Itinerary</h4>
+                    <div class="tc-items">
+                        <div class="tc-item">
+                            <span class="tc-icon">🌊</span>
+                            <div class="tc-detail">
+                                <strong>Air Terjun Coban Rondo</strong>
+                                <span>Tiket Masuk & Retribusi Pemda (Lunas)</span>
+                            </div>
+                        </div>
+                        <div class="tc-item">
+                            <span class="tc-icon">🛍️</span>
+                            <div class="tc-detail">
+                                <strong>Pusat Oleh-Oleh "Bu Siti"</strong>
+                                <span>Voucher UMKM NusaWise (Lunas)</span>
+                            </div>
+                        </div>
+                        <div class="tc-item">
+                            <span class="tc-icon">⛺</span>
+                            <div class="tc-detail">
+                                <strong>Glamping Bukit Nirwana</strong>
+                                <span>1 Tenda VIP (Lunas)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="trip-card-footer">
+                    <div class="tcf-eco">
+                        <span class="eco-dot"></span> Status destinasi saat ini terpantau <strong>Aman</strong> oleh
+                        EcoWatch.
+                    </div>
+                    <div class="tcf-actions">
+                        <button class="btn-outline">Ubah Jadwal</button>
+                        <button class="btn-outline">Hubungi CS</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div x-show="tab === 'past'" x-transition.opacity class="trip-list" style="display: none;">
+
+            <div class="trip-card past-trip">
+                <div class="trip-card-header">
+                    <div class="trip-date-box bg-gray">
+                        <span class="td-month">Jan</span>
+                        <span class="td-date">05</span>
+                        <span class="td-year">2026</span>
+                    </div>
+                    <div class="trip-header-info">
+                        <span class="trip-status status-done">Perjalanan Selesai</span>
+                        <h2 class="trip-title text-gray-dark">Taman Wisata Alam Kawah Ijen</h2>
+                        <p class="trip-meta">1 Hari • 4 Penumpang • Order ID: #NW-11092</p>
+                    </div>
+                </div>
+
+                <div class="trip-card-footer" style="border-top: none; padding-top: 0;">
+                    <div class="tcf-eco text-gray-dark">
+                        Terima kasih telah berkontribusi Rp 20.000 untuk PAD daerah.
+                    </div>
+                    <div class="tcf-actions">
+                        <button class="btn-outline">Unduh Invoice</button>
+                        <button class="btn-solid-small">Beri Ulasan</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div x-show="tab === 'cancelled'" x-transition.opacity class="trip-list text-center py-10"
+            style="display: none;">
+            <p class="text-gray-light">Tidak ada riwayat perjalanan yang dibatalkan.</p>
+        </div>
+
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="#" class="logo">Nusa<span>Wise</span></a>
+                <p>Membangun masa depan pariwisata Nusantara yang cerdas, aman, dan berkelanjutan melalui integrasi AI dan komunitas.</p>
+                <div class="social-links">
+                    <a href="#">🌐</a>
+                    <a href="#">📸</a>
+                    <a href="#">🐦</a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Navigasi</h4>
+                <ul>
+                    <li><a href="#">Beranda</a></li>
+                    <li><a href="#">Cek Destinasi</a></li>
+                    <li><a href="#">Rencana Perjalanan</a></li>
+                    <li><a href="#">Agen AI</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Layanan</h4>
+                <ul>
+                    <li><a href="#">Smart Ticketing</a></li>
+                    <li><a href="#">Laporan EcoWatch</a></li>
+                    <li><a href="#">UMKM Partner</a></li>
+                    <li><a href="#">Bantuan 24/7</a></li>
+                </ul>
+            </div>
+            <div class="footer-cta">
+                <h4>Jadi Agen EcoWatch</h4>
+                <p>Dapatkan poin dan reward dengan melaporkan kondisi wisata.</p>
+                <button class="btn-footer">Daftar Sekarang</button>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 NusaWise Team. Proyek Digdaya X Hackathon.</p>
+        </div>
+    </footer>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</body>
+
+</html>
